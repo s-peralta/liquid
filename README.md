@@ -42,10 +42,16 @@ HTML Title
  
 Settings HTML
 --------
-Input Field
+
+Settings.html Wrapper
 ```
-<input type="text" name="text_input" value="" />
-{{settings.text_input}} 
+<fieldset>
+  <legend>Product pages</legend>
+  <table>
+  </table>
+</fieldset>
+```
+
 ```
 Input Field
 ```
@@ -58,5 +64,6 @@ Text Area
 <textarea name="text_area" cols="60" rows="5" id="my_textarea" value="" />
 {{settings.text_areat}} 
 ```
+
 
 
