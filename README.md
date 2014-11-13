@@ -51,7 +51,6 @@ Settings.html Wrapper
   </table>
 </fieldset>
 ```
-
 Input Field
 ```
 <input type="text" name="text_input" value="" />
@@ -64,5 +63,11 @@ Text Area
 {{settings.text_areat}} 
 ```
 
+Checked Conditional Statment
+```
+{% if settings.my_checkbox %}
+  <p> Lorem Ipsum</p>
+{% end-if  %}
+```
 
 
