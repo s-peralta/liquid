@@ -60,6 +60,12 @@ Footer Menu
   </ul>
 </footer>
 ``` 
+
+Adding Snippet Include
+--------
+``` 
+{% include 'top-header' %}
+``` 
   
 Settings HTML
 --------
