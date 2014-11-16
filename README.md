@@ -40,6 +40,7 @@ HTML Title
 </body>
  ``` 
  Main Menu
+ --------
 ``` 
 <nav class="main-menu">
  <ul>
@@ -51,6 +52,7 @@ HTML Title
   ``` 
 
 Footer Menu
+--------
 ``` 
 <footer>
   <ul>
@@ -64,7 +66,7 @@ Footer Menu
 Adding Snippet Include
 --------
 ``` 
-{% include 'top-header' %}
+{% include 'snippet-name' %} Ex / {% include 'header' %}
 ``` 
   
 Settings HTML
