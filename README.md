@@ -70,7 +70,7 @@ Checked Conditional Statment
 {% end-if  %}
 ```
 
-Checked Conditional Statment
+If Conditional Statment
 ```
 {% if template == 'list-collections' %}
 {% include 'collection-listing' %}
