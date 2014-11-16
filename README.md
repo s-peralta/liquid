@@ -39,7 +39,28 @@ HTML Title
   </div>
 </body>
  ``` 
- 
+ Main Menu
+``` 
+<nav class="main-menu">
+ <ul>
+   {% for link in linklists.main-menu.links %}
+   <li {% if link.active %}class="current"{% endif %}><a href="{{ link.url }}">{{ link.title }}</a></li>
+   {% endfor %}
+ </ul>
+</nav>
+  ``` 
+
+Footer Menu
+``` 
+<footer>
+  <ul>
+    {% for link in linklists.footer.links %}
+    <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+    {% endfor %}
+  </ul>
+</footer>
+``` 
+  
 Settings HTML
 --------
 
