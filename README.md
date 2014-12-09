@@ -34,15 +34,6 @@ HTML Title
 <title>{{ page_title }} - {{ shop.name }}</title> 
 ```
 
-```
-<body>
-  <div class="container">
-     <div class="content"> 
-      {{ content_for_layout}}
-     </div>
-  </div>
-</body>
- ``` 
 Main Menu
 --------
 ``` 
@@ -53,7 +44,7 @@ Main Menu
    {% endfor %}
  </ul>
 </nav>
-  ``` 
+``` 
 
 Footer Menu
 --------
@@ -66,6 +57,33 @@ Footer Menu
   </ul>
 </footer>
 ``` 
+
+Declare Header
+--------
+```
+<head>
+  <meta charset="utf-8">
+
+  {{ content_for_header }}
+
+  {{ "normalize.css" | asset_url | stylesheet_tag }}
+  {{ "style.css" | asset_url | stylesheet_tag }}
+</head>
+ ``` 
+
+Declare Body Content
+--------
+```
+<body>
+  <div class="container">
+     <div class="content"> 
+      {{ content_for_layout}}
+     </div>
+  </div>
+</body>
+ ``` 
+<img src="http://www.tetchi.ca/wp-content/uploads/2013/04/sections.png" alt="sections"/>
+
 
 Adding Snippet Include
 --------
