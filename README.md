@@ -8,20 +8,24 @@ Folder Structure
   - <strong>Layout</strong> (Theme.liquid File AKA Header & Footer)
   - <strong>Snippets</strong> (Imported Modules, Ex/ Social Media Icons , Pagination)
   - <strong>Template</strong> (404.liquid / Article.liquid (Blog Details Page) / Blog.liquid (Blod Listing) / Cart.liquid / Collection.liquid (Display difrent collections/categories) / index.liquid (Homepage / page.liquid (About/Conact/General) / ) Product.liquid (Product detail page) / Search.liquid )
-  - 
-  
 
-CSS LINK
+
+CSS Link
 --------
 ```
 {{ "normalize.css" | asset_url | stylesheet_tag }}
 {{ "style.css" | asset_url | stylesheet_tag }}
 ```
-JS LINK
+JS Link
 --------
 ```
 {{ "customer_area.js"  | shopify_asset_url | script_tag }}
 {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js' | script_tag }}
+```
+Image Link
+--------
+```
+{{ 'image-name.gif' | asset_url | img_tag }}
 ```
 
 HTML Title
@@ -68,6 +72,38 @@ Adding Snippet Include
 ``` 
 {% include 'snippet-name' %} Ex / {% include 'header' %}
 ``` 
+
+Assigns Page and Collection to Index Page
+--------
+``` 
+{% assign page = pages.frontpage %}
+<div class="rte index-page">
+    <h2>{{ page.title }}</h2>
+    {{ page.content }}
+</div>
+
+```
+``` 
+
+{% assign collection = collections.frontpage %}
+<div class="index-collection clearfix">
+  <h2>{{ collection.title }}</h2>
+    <ul>
+    {% for product in collection.products | limit:8 %}
+      {{ product.title }}
+      <li>
+      <a href="{{product.url}}">
+        <img src="{{ product.featured_image | product_img_url: 'medium' }}" />
+      </a>
+      {{product.price | money}}
+    </li>
+    {% endfor %}
+  </ul>
+</div>
+
+```
+
+
   
 Settings HTML
 --------
