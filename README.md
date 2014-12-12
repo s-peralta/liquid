@@ -121,6 +121,31 @@ Assigns Page and Collection to Index Page
 
 ```
 
+Paginate Products
+--------
+``` 
+{% paginate collection.products by 3 %}
+
+{% for product in collection.products %}
+  {{ product.title }}
+  <li>
+  <a href="{{product.url}}">
+    <img src="{{ product.featured_image | product_img_url: 'medium' }}" />
+  </a>
+  {{product.price | money}}
+</li>
+{% endfor %}
+
+{% if paginate.pages > 1 %}
+<div class="pagination">
+  {{ paginate | default_pagination }}
+</div>
+{% endif %}
+
+{% endpaginate %}
+
+```
+
 
   
 Settings HTML
